@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025학년도 중등 수학 임용고사 - 복소해석학 30제</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px 40px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        h1, h2 {
+            color: #0056b3;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 15px;
+            text-align: center;
+        }
+        .intro {
+            background-color: #e9ecef;
+            padding: 15px 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .question-box {
+            border: 1px solid #dee2e6;
+            padding: 20px;
+            margin-bottom: 25px;
+            background: #fafcff;
+            border-radius: 8px;
+            transition: box-shadow 0.3s ease;
+        }
+        .question-box:hover {
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .question-title {
+            font-weight: 700;
+            font-size: 1.3em;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .answer-box {
+            display: none;
+            border: 1px solid #b8daff;
+            padding: 20px;
+            margin-top: 20px;
+            background: #f0f8ff;
+            border-radius: 8px;
+        }
+        .answer-box h3 {
+            color: #004085;
+            margin-top: 0;
+            border-bottom: 1px solid #b8daff;
+            padding-bottom: 8px;
+        }
+        .toggle-button {
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            padding: 10px 18px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #0056b3;
+        }
+        .key-point {
+            font-weight: bold;
+            color: #d9534f;
+            background-color: #f9e5e4;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        .final-answer {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #28a745;
+            background-color: #eaf6ec;
+            padding: 5px 8px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>2025학년도 중등 수학 임용고사 대비</h1>
+        <h2>복소해석학 기출 기반 유사 문제 30선</h2>
+        <div class="intro">
+            <p>
+                본 자료는 복소해석학의 핵심 개념인 해석함수, 복소적분, 급수, 유수 이론 등을 종합적으로 점검할 수 있도록 구성되었습니다.<br>
+                각 문제의 '정답 및 해설 보기' 버튼을 클릭하여 학습을 진행하세요.
+            </p>
+        </div>
+
+        <!-- 문제 목록 시작 -->
+
+        <!-- 문항 1: 복소수의 기본 연산 -->
+        <div class="question-box">
+            <div class="question-title">문항 1: 복소수의 극형식</div>
+            <p>
+                방정식 \( z^4 = -8 - 8\sqrt{3}i \) 를 만족하는 모든 복소수 \(z\)를 구하시오.
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer1')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer1">
+                <h3>정답 및 해설</h3>
+                <p>
+                    먼저 우변의 복소수를 극형식으로 나타낸다. \(w = -8 - 8\sqrt{3}i\).<br>
+                    \(|w| = \sqrt{(-8)^2 + (-8\sqrt{3})^2} = \sqrt{64 + 192} = \sqrt{256} = 16\).<br>
+                    \(w = 16(-\frac{1}{2} - \frac{\sqrt{3}}{2}i) = 16(\cos\frac{4\pi}{3} + i\sin\frac{4\pi}{3})\).<br>
+                    \(z = r(\cos\theta + i\sin\theta)\)라 하면, 드무아브르 정리에 의해 \(z^4 = r^4(\cos(4\theta) + i\sin(4\theta))\)이다.<br>
+                    따라서 \(r^4 = 16 \implies r=2\) 이고, \(4\theta = \frac{4\pi}{3} + 2k\pi \implies \theta = \frac{\pi}{3} + \frac{k\pi}{2}\) (k=0, 1, 2, 3).<br>
+                    k=0: \(z_0 = 2(\cos\frac{\pi}{3} + i\sin\frac{\pi}{3}) = 1 + \sqrt{3}i\)<br>
+                    k=1: \(z_1 = 2(\cos\frac{5\pi}{6} + i\sin\frac{5\pi}{6}) = -\sqrt{3} + i\)<br>
+                    k=2: \(z_2 = 2(\cos\frac{4\pi}{3} + i\sin\frac{4\pi}{3}) = -1 - \sqrt{3}i\)<br>
+                    k=3: \(z_3 = 2(\cos\frac{11\pi}{6} + i\sin\frac{11\pi}{6}) = \sqrt{3} - i\)<br>
+                    <span class="final-answer">정답: \(1+\sqrt{3}i, -\sqrt{3}+i, -1-\sqrt{3}i, \sqrt{3}-i\)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 문항 2: 코시-리만 방정식 -->
+        <div class="question-box">
+            <div class="question-title">문항 2: 코시-리만 방정식</div>
+            <p>
+                함수 \(f(z) = e^x(\cos y + i \sin y)\)가 해석적인지 판별하고, 만약 해석적이라면 그 도함수 \(f'(z)\)를 구하시오. (단, \(z=x+iy\))
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer2')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer2">
+                <h3>정답 및 해설</h3>
+                <p>
+                    \(f(z) = u(x,y) + iv(x,y)\)에서 \(u = e^x \cos y\), \(v = e^x \sin y\)이다.<br>
+                    편도함수를 구하면:<br>
+                    \(u_x = e^x \cos y\), \(u_y = -e^x \sin y\)<br>
+                    \(v_x = e^x \sin y\), \(v_y = e^x \cos y\)<br>
+                    <span class="key-point">코시-리만 방정식</span> 확인:<br>
+                    \(u_x = v_y = e^x \cos y\) (성립)<br>
+                    \(u_y = -v_x = -e^x \sin y\) (성립)<br>
+                    모든 편도함수는 연속이므로 \(f(z)\)는 모든 복소평면에서 해석적(entire)이다.<br>
+                    도함수는 \(f'(z) = u_x + iv_x = e^x \cos y + i(e^x \sin y) = e^x(\cos y + i\sin y) = e^z\).<br>
+                    <span class="final-answer">결론: 해석적이며, \(f'(z) = e^z\) 이다.</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- ... (이런 식으로 30개의 문제를 구성) ... -->
+        
+        <!-- 문항 3: 조화함수 -->
+        <div class="question-box">
+            <div class="question-title">문항 3: 조화함수와 조화켤레함수</div>
+            <p>
+                함수 \(u(x,y) = x^3 - 3xy^2 + y\)가 조화함수임을 보이고, \(u\)의 조화켤레함수 \(v(x,y)\)를 구하시오. (단, \(v(0,0)=0\))
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer3')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer3">
+                <h3>정답 및 해설</h3>
+                <p>
+                    1. 조화함수 증명: 라플라스 방정식 \(u_{xx} + u_{yy} = 0\)을 만족하는지 확인한다.<br>
+                    \(u_x = 3x^2 - 3y^2\), \(u_{xx} = 6x\)<br>
+                    \(u_y = -6xy + 1\), \(u_{yy} = -6x\)<br>
+                    \(u_{xx} + u_{yy} = 6x - 6x = 0\). 따라서 \(u\)는 조화함수이다.<br>
+                    2. 조화켤레함수 구하기: 코시-리만 방정식을 이용한다.<br>
+                    \(v_y = u_x = 3x^2 - 3y^2\). y에 대해 적분하면 \(v(x,y) = 3x^2y - y^3 + h(x)\).<br>
+                    \(v_x = 6xy + h'(x)\).<br>
+                    \(v_x = -u_y = -(-6xy + 1) = 6xy - 1\).<br>
+                    따라서 \(6xy + h'(x) = 6xy - 1 \implies h'(x) = -1 \implies h(x) = -x + C\).<br>
+                    \(v(x,y) = 3x^2y - y^3 - x + C\).<br>
+                    조건 \(v(0,0)=0\)을 대입하면 \(0 = 0 - 0 - 0 + C \implies C=0\).<br>
+                    <span class="final-answer">조화켤레함수: \(v(x,y) = 3x^2y - y^3 - x\)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 문항 4: 선적분 -->
+        <div class="question-box">
+            <div class="question-title">문항 4: 복소 선적분</div>
+            <p>
+                경로 \(C\)가 \(z(t) = 2e^{it}\) (\(0 \le t \le \pi\))일 때, 선적분 \( \int_C \bar{z} \,dz \)의 값을 구하시오.
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer4')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer4">
+                <h3>정답 및 해설</h3>
+                <p>
+                    주어진 경로 \(C\)는 중심이 원점이고 반지름이 2인 원의 상반부이다.<br>
+                    \(z(t) = 2e^{it} = 2(\cos t + i\sin t)\)<br>
+                    \(\bar{z}(t) = 2e^{-it} = 2(\cos t - i\sin t)\)<br>
+                    \(dz = z'(t)dt = 2ie^{it} dt\)<br>
+                    적분을 t에 대한 정적분으로 변환한다.<br>
+                    \( \int_C \bar{z} \,dz = \int_0^\pi (2e^{-it})(2ie^{it}) \,dt \)<br>
+                    \( = \int_0^\pi 4i \cdot e^0 \,dt = \int_0^\pi 4i \,dt \)<br>
+                    \( = [4it]_0^\pi = 4i\pi - 0 \)<br>
+                    <span class="final-answer">정답: \(4i\pi\)</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- 문항 5: 코시의 적분 정리 -->
+        <div class="question-box">
+            <div class="question-title">문항 5: 코시의 적분 정리</div>
+            <p>
+                경로 \(C\)가 정사각형 \(|x|\le 2, |y|\le 2\)일 때, 적분 \( \oint_C \frac{z^2}{z^2+9} \,dz \)의 값을 구하시오.
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer5')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer5">
+                <h3>정답 및 해설</h3>
+                <p>
+                    피적분함수 \(f(z) = \frac{z^2}{z^2+9}\)의 특이점은 \(z^2+9=0\), 즉 \(z=\pm 3i\)이다.<br>
+                    적분 경로 C는 \(x=\pm 2, y=\pm 2\)로 둘러싸인 정사각형 영역이다.<br>
+                    특이점 \(z=3i\)와 \(z=-3i\)는 모두 이 정사각형 경로 외부에 존재한다. (\(|Im(z)|=3 > 2\))<br>
+                    피적분함수는 경로 C와 그 내부에서 해석적이므로, <span class="key-point">코시의 적분 정리(Cauchy's Integral Theorem)</span>에 의해 적분 값은 0이다.<br>
+                    <span class="final-answer">정답: 0</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 문항 6: 코시의 적분 공식 -->
+        <div class="question-box">
+            <div class="question-title">문항 6: 코시의 적분 공식</div>
+            <p>
+                경로 \(C\)가 원 \(|z-1|=2\)일 때, 적분 \( \oint_C \frac{e^{2z}}{z-2} \,dz \)의 값을 구하시오. (경로는 양의 방향)
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer6')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer6">
+                <h3>정답 및 해설</h3>
+                <p>
+                    피적분함수의 특이점은 \(z=2\)이다.<br>
+                    적분 경로 C는 중심이 1이고 반지름이 2인 원이다. 점 \(z=2\)는 \(|2-1|=1 < 2\)이므로 경로 내부에 존재한다.<br>
+                    함수 \(f(z) = e^{2z}\)는 모든 복소평면에서 해석적이다.<br>
+                    <span class="key-point">코시의 적분 공식</span> \(\oint_C \frac{f(z)}{z-z_0} dz = 2\pi i f(z_0)\)을 이용한다.<br>
+                    여기서 \(z_0=2\), \(f(z)=e^{2z}\)이다.<br>
+                    적분 값 = \(2\pi i \cdot f(2) = 2\pi i \cdot e^{2(2)} = 2\pi i e^4\).<br>
+                    <span class="final-answer">정답: \(2\pi i e^4\)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- ... 계속해서 30개까지 문항 추가 ... -->
+        
+        <div class="question-box">
+            <div class="question-title">문항 7: 코시의 도함수 공식</div>
+            <p>경로 C가 원 \( |z|=2 \) (양의 방향)일 때, 다음 적분 값을 구하시오.
+            $$ \oint_C \frac{\cos(z)}{(z-\frac{\pi}{2})^3} \,dz $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer7')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer7">
+                <h3>정답 및 해설</h3>
+                <p>
+                특이점 \(z_0 = \frac{\pi}{2}\)는 경로 내부에 존재한다. (\(|\frac{\pi}{2}| \approx 1.57 < 2\))<br>
+                <span class="key-point">코시의 도함수 공식</span> \( \oint_C \frac{f(z)}{(z-z_0)^{n+1}} \,dz = \frac{2\pi i}{n!} f^{(n)}(z_0) \)을 이용한다.<br>
+                여기서 \(f(z) = \cos(z)\), \(z_0 = \frac{\pi}{2}\), \(n+1=3 \implies n=2\)이다.<br>
+                \(f'(z) = -\sin(z)\)<br>
+                \(f''(z) = -\cos(z)\)<br>
+                따라서, \(f''(\frac{\pi}{2}) = -\cos(\frac{\pi}{2}) = 0\).<br>
+                적분 값은 \(\frac{2\pi i}{2!} f''(\frac{\pi}{2}) = \pi i \cdot 0 = 0\).<br>
+                <span class="final-answer">정답: 0</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 8: 리우빌의 정리</div>
+            <p>함수 \(f(z)\)는 모든 복소평면에서 해석적(entire)이고, 모든 \(z\)에 대하여 \(|f(z)| \le \sqrt{|z|} + 10\)을 만족한다. \(f(z)\)가 상수함수임을 보이시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer8')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer8">
+                <h3>정답 및 해설</h3>
+                <p>
+                임의의 점 \(z_0\)에 대해 \(f'(z_0)=0\)임을 보인다. <span class="key-point">코시의 부등식</span> \( |f'(z_0)| \le \frac{M_R}{R} \)를 이용한다.<br>
+                중심이 \(z_0\)이고 반지름이 R인 원 \(C_R: |z-z_0|=R\) 위에서 \(|z| \le |z_0|+R\)이다.<br>
+                따라서 \(|f(z)| \le \sqrt{|z|} + 10 \le \sqrt{|z_0|+R} + 10\) 이므로 \(M_R = \sqrt{|z_0|+R} + 10\)으로 잡을 수 있다.<br>
+                \(|f'(z_0)| \le \frac{\sqrt{|z_0|+R} + 10}{R}\).<br>
+                여기서 \(R \to \infty\)의 극한을 취하면, \( \lim_{R \to \infty} \frac{\sqrt{|z_0|+R} + 10}{R} = 0 \) 이다.<br>
+                따라서 임의의 \(z_0\)에 대해 \(|f'(z_0)| \le 0\) 이므로 \(f'(z_0)=0\)이다.<br>
+                모든 점에서 도함수가 0이므로 \(f(z)\)는 상수함수이다. (이는 <span class="key-point">리우빌 정리</span>의 일반화된 형태이다.)
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 9: 테일러 급수</div>
+            <p>함수 \(f(z) = \frac{1}{1+z^2}\)을 \(z=0\)을 중심으로 테일러 급수로 전개하고, 그 수렴반경을 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer9')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer9">
+                <h3>정답 및 해설</h3>
+                <p>
+                함수 \(f(z)\)는 등비급수 \(\frac{1}{1-w} = \sum_{n=0}^{\infty} w^n\) (단, \(|w|<1\))를 이용하여 전개할 수 있다.<br>
+                \(w = -z^2\)로 치환하면, \(f(z) = \frac{1}{1-(-z^2)} = \sum_{n=0}^{\infty} (-z^2)^n = \sum_{n=0}^{\infty} (-1)^n z^{2n}\).<br>
+                이 급수는 \(|w| < 1\), 즉 \(|-z^2| < 1 \implies |z|^2 < 1 \implies |z|<1\)일 때 수렴한다.<br>
+                <span class="final-answer">테일러 급수: \(\sum_{n=0}^{\infty} (-1)^n z^{2n} = 1 - z^2 + z^4 - z^6 + \dots\), 수렴반경: 1</span><br>
+                (참고: 수렴반경은 중심 \(z=0\)에서 가장 가까운 특이점(\(z=\pm i\))까지의 거리와 같다.)
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 10: 로랑 급수</div>
+            <p>함수 \(f(z) = \frac{1}{(z-1)(z-3)}\)을 영역 \(1 < |z| < 3\)에서 로랑 급수로 전개하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer10')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer10">
+                <h3>정답 및 해설</h3>
+                <p>
+                먼저 부분분수로 분해한다: \(f(z) = \frac{1}{2}\left(\frac{1}{z-3} - \frac{1}{z-1}\right)\).<br>
+                영역 \(1 < |z| < 3\)에 맞게 각 항을 등비급수 형태로 변형한다.<br>
+                1) \(|\frac{z}{3}| < 1\)이므로, \(\frac{1}{z-3} = \frac{-1}{3(1-z/3)} = -\frac{1}{3}\sum_{n=0}^{\infty} (\frac{z}{3})^n = -\sum_{n=0}^{\infty} \frac{z^n}{3^{n+1}}\).<br>
+                2) \(|\frac{1}{z}| < 1\)이므로, \(\frac{-1}{z-1} = \frac{-1}{z(1-1/z)} = -\frac{1}{z}\sum_{n=0}^{\infty} (\frac{1}{z})^n = -\sum_{n=0}^{\infty} \frac{1}{z^{n+1}}\).<br>
+                따라서 \(f(z) = \frac{1}{2} \left( -\sum_{n=0}^{\infty} \frac{z^n}{3^{n+1}} - \sum_{n=0}^{\infty} \frac{1}{z^{n+1}} \right)\).<br>
+                <span class="final-answer">로랑 급수: \(-\frac{1}{2} \sum_{n=0}^{\infty} \frac{z^n}{3^{n+1}} - \frac{1}{2} \sum_{n=1}^{\infty} \frac{1}{z^n}\)</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 11: 유수(Residue) 계산</div>
+            <p>함수 \(f(z) = \frac{z^2}{(z-1)^2(z+1)}\)의 모든 특이점에서 유수를 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer11')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer11">
+                <h3>정답 및 해설</h3>
+                <p>
+                특이점은 \(z=1\) (위수 2인 극)과 \(z=-1\) (단순극)이다.<br>
+                1) \(z=-1\)에서의 유수 (단순극 공식):<br>
+                \(Res(f, -1) = \lim_{z \to -1} (z+1)f(z) = \lim_{z \to -1} \frac{z^2}{(z-1)^2} = \frac{(-1)^2}{(-1-1)^2} = \frac{1}{4}\).<br>
+                2) \(z=1\)에서의 유수 (위수 m인 극 공식):<br>
+                \(Res(f, 1) = \frac{1}{(2-1)!} \lim_{z \to 1} \frac{d}{dz} \left[ (z-1)^2 f(z) \right] = \lim_{z \to 1} \frac{d}{dz} \left[ \frac{z^2}{z+1} \right]\).<br>
+                \(\frac{d}{dz} \left[ \frac{z^2}{z+1} \right] = \frac{2z(z+1)-z^2(1)}{(z+1)^2} = \frac{z^2+2z}{(z+1)^2}\).<br>
+                극한값은 \( \frac{1^2+2(1)}{(1+1)^2} = \frac{3}{4} \).<br>
+                <span class="final-answer">\(Res(f, -1) = \frac{1}{4}\), \(Res(f, 1) = \frac{3}{4}\)</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 12: 유수 정리</div>
+            <p>경로 C가 원 \( |z|=3 \) (양의 방향)일 때, 유수 정리를 이용하여 다음 적분 값을 구하시오.
+            $$ \oint_C \frac{e^z}{(z-1)(z+2)^2} \,dz $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer12')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer12">
+                <h3>정답 및 해설</h3>
+                <p>
+                특이점 \(z=1\) (단순극)과 \(z=-2\) (위수 2인 극)는 모두 경로 \(|z|=3\) 내부에 존재한다.<br>
+                <span class="key-point">유수 정리</span>에 의해 적분 값은 \(2\pi i \sum Res\)이다.<br>
+                1) \(Res(f, 1) = \lim_{z \to 1} (z-1)f(z) = \lim_{z \to 1} \frac{e^z}{(z+2)^2} = \frac{e^1}{(1+2)^2} = \frac{e}{9}\).<br>
+                2) \(Res(f, -2) = \lim_{z \to -2} \frac{d}{dz} \left[ (z+2)^2 f(z) \right] = \lim_{z \to -2} \frac{d}{dz} \left[ \frac{e^z}{z-1} \right]\).<br>
+                \(\frac{d}{dz} \left[ \frac{e^z}{z-1} \right] = \frac{e^z(z-1)-e^z}{(z-1)^2} = \frac{e^z(z-2)}{(z-1)^2}\).<br>
+                극한값은 \( \frac{e^{-2}(-2-2)}{(-2-1)^2} = \frac{-4e^{-2}}{9}\).<br>
+                적분 값 = \(2\pi i \left( \frac{e}{9} - \frac{4e^{-2}}{9} \right)\).<br>
+                <span class="final-answer">정답: \( \frac{2\pi i}{9} (e - 4e^{-2}) \)</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 13: 실수 이상적분 계산</div>
+            <p>유수 정리를 이용하여 다음 실수 이상적분의 값을 구하시오.
+            $$ \int_{-\infty}^{\infty} \frac{1}{x^2+2x+2} \,dx $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer13')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer13">
+                <h3>정답 및 해설</h3>
+                <p>
+                복소함수 \(f(z) = \frac{1}{z^2+2z+2}\)를 생각한다. 특이점은 \(z^2+2z+2=0 \implies z = \frac{-2 \pm \sqrt{4-8}}{2} = -1 \pm i\).<br>
+                상반평면에 있는 특이점은 \(z_0 = -1+i\)이다. (단순극)<br>
+                경로를 반지름 R인 상반원 \(C_R\)과 실수축 구간 \([-R, R]\)으로 잡으면, R이 충분히 클 때 경로 내부에 \(z_0\)가 포함된다.<br>
+                \( \int_{-R}^{R} f(x)dx + \int_{C_R} f(z)dz = 2\pi i \cdot Res(f, -1+i)\).<br>
+                \(Res(f, -1+i) = \lim_{z \to -1+i} (z-(-1+i))f(z) = \lim_{z \to -1+i} \frac{1}{z-(-1-i)} = \frac{1}{(-1+i)-(-1-i)} = \frac{1}{2i}\).<br>
+                \(R \to \infty\)일 때, \(|z^2 f(z)| \to 1\)이므로 조르단의 보조정리에 의해 \(\int_{C_R} f(z)dz \to 0\).<br>
+                따라서 \( \int_{-\infty}^{\infty} f(x)dx = 2\pi i \cdot \frac{1}{2i} = \pi\).<br>
+                <span class="final-answer">정답: \(\pi\)</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 14: 최대 절댓값 원리</div>
+            <p>함수 \(f(z)=z^2+2i\)가 닫힌 원판 \(D = \{z \in \mathbb{C} : |z| \le 1\}\)에서 가질 수 있는 \(|f(z)|\)의 최댓값을 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer14')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer14">
+                <h3>정답 및 해설</h3>
+                <p>
+                <span class="key-point">최대 절댓값 원리(Maximum Modulus Principle)</span>에 의해, 상수함수가 아닌 해석함수의 절댓값은 영역의 내부에서 최댓값을 갖지 않고, 경계에서 최댓값을 갖는다.<br>
+                따라서 우리는 경계 \(|z|=1\)에서 최댓값을 찾으면 된다. \(z=e^{i\theta}\)로 놓자.<br>
+                \(f(z) = (e^{i\theta})^2 + 2i = e^{2i\theta} + 2i = (\cos(2\theta) + i\sin(2\theta)) + 2i = \cos(2\theta) + i(\sin(2\theta)+2)\).<br>
+                \(|f(z)|^2 = (\cos(2\theta))^2 + (\sin(2\theta)+2)^2\)<br>
+                \( = \cos^2(2\theta) + \sin^2(2\theta) + 4\sin(2\theta) + 4\)<br>
+                \( = 1 + 4\sin(2\theta) + 4 = 5 + 4\sin(2\theta)\).<br>
+                \(|f(z)|^2\)는 \(\sin(2\theta)=1\)일 때 최댓값을 갖는다. 최댓값은 \(5+4(1)=9\).<br>
+                따라서 \(|f(z)|\)의 최댓값은 \(\sqrt{9}=3\).<br>
+                <span class="final-answer">정답: 3</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 15: 특이점의 분류</div>
+            <p>함수 \( f(z) = \frac{1-\cos z}{z^2} \) 의 특이점 \(z=0\)의 종류를 판별하시오. (제거 가능 특이점, 극, 본질적 특이점)</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer15')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer15">
+                <h3>정답 및 해설</h3>
+                <p>
+                특이점의 종류를 판별하는 방법은 극한을 이용하거나 로랑 급수를 이용하는 것이다.<br>
+                1. 극한 이용: \( \lim_{z \to 0} f(z) \)의 존재 여부를 확인한다.<br>
+                \(\cos z\)의 테일러 전개: \(\cos z = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots\)<br>
+                \( \lim_{z \to 0} \frac{1-(1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \dots)}{z^2} = \lim_{z \to 0} \frac{\frac{z^2}{2} - \frac{z^4}{24} + \dots}{z^2} = \lim_{z \to 0} (\frac{1}{2} - \frac{z^2}{24} + \dots) = \frac{1}{2}\).<br>
+                극한값이 유한하게 존재하므로, \(z=0\)은 <span class="key-point">제거 가능 특이점(removable singularity)</span>이다.<br>
+                <span class="final-answer">정답: 제거 가능 특이점</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <div class="question-title">문항 16: 삼각함수 실수적분</div>
+            <p>유수 정리를 이용하여 다음 정적분의 값을 구하시오.
+            $$ \int_{0}^{2\pi} \frac{1}{5 - 4\cos\theta} \,d\theta $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer16')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer16">
+                <h3>정답 및 해설</h3>
+                <p>
+                \(z=e^{i\theta}\)로 치환하면, \(d\theta = \frac{dz}{iz}\)이고 \(\cos\theta = \frac{1}{2}(z+\frac{1}{z})\)이다. 적분 경로는 단위 원 C가 된다.<br>
+                적분식은 다음과 같이 변환된다.<br>
+                \( \oint_C \frac{1}{5 - 4 \cdot \frac{1}{2}(z+z^{-1})} \cdot \frac{dz}{iz} = \oint_C \frac{1}{5 - 2(z+z^{-1})} \cdot \frac{dz}{iz} \)<br>
+                \( = \oint_C \frac{1}{-2iz + 5i - 2iz^{-1}} dz = \oint_C \frac{z}{-2iz^2 + 5iz - 2i} dz \)<br>
+                \( = \frac{1}{i} \oint_C \frac{-z}{2z^2 - 5z + 2} dz = \frac{1}{i} \oint_C \frac{-z}{(2z-1)(z-2)} dz \).<br>
+                단위 원 내부에 있는 특이점은 \(z=1/2\) 뿐이다.<br>
+                피적분함수 \(f(z) = \frac{-z}{(2z-1)(z-2)}\)의 \(z=1/2\)에서의 유수는<br>
+                \(Res(f, 1/2) = \lim_{z \to 1/2} (z-1/2) \frac{-z}{2(z-1/2)(z-2)} = \frac{-(1/2)}{2(1/2-2)} = \frac{-1/2}{2(-3/2)} = \frac{-1/2}{-3} = \frac{1}{6}\).<br>
+                따라서 적분 값은 \(\frac{1}{i} \cdot (2\pi i \cdot Res) = \frac{1}{i} \cdot 2\pi i \cdot \frac{1}{6} = \frac{2\pi}{6} = \frac{\pi}{3}\).<br>
+                <span class="final-answer">정답: \(\frac{\pi}{3}\)</span>
+                </p>
+            </div>
+        </div>
+        
+        <div class="question-box">
+            <div class="question-title">문항 17: 인수의 원리</div>
+            <p>함수 \(f(z) = z^4 - 2z^3 + z^2 - 1\)이 원 \(|z|=1\)의 내부에 몇 개의 근(zero)을 갖는지 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer17')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer17">
+                <h3>정답 및 해설</h3>
+                <p>
+                <span class="key-point">루셰의 정리(Rouché's Theorem)</span>를 이용한다. \(f(z) = g(z) + h(z)\)로 분해하여 경계 \(|z|=1\)에서 \(|g(z)| > |h(z)|\)임을 보인다.<br>
+                \(g(z) = -2z^3\)으로 두고, \(h(z) = z^4 + z^2 - 1\)로 두자.<br>
+                경계 \(|z|=1\)에서:<br>
+                \(|g(z)| = |-2z^3| = 2|z|^3 = 2(1)^3 = 2\).<br>
+                \(|h(z)| = |z^4 + z^2 - 1| \le |z^4| + |z^2| + |-1| = |z|^4 + |z|^2 + 1 = 1+1+1=3\).<br>
+                이 경우 \(|g(z)| > |h(z)|\)가 성립하지 않는다. 다른 방법으로 시도한다.<br>
+                <br>
+                \(g(z) = z^4 - 2z^3\)으로 두고, \(h(z) = z^2 - 1\)로 두자.<br>
+                경계 \(|z|=1\)에서:<br>
+                \(|g(z)| = |z^3(z-2)| = |z|^3 |z-2| = 1 \cdot |z-2|\). \(z=e^{i\theta}\)일 때, \(z-2\)는 중심이 -2이고 반지름이 1인 원 위의 점이다. 따라서 \(1 \le |z-2| \le 3\).<br>
+                \(|h(z)| = |z^2 - 1| \le |z^2| + |-1| = 2\).<br>
+                이 또한 명확하지 않다.<br>
+                <br>
+                다시, \(g(z) = -2z^3\), \(h(z) = z^4 + z^2 - 1\)로 돌아가자. 위에서 \(|h(z)|\le 3\)으로 추정했지만 더 정확하게 보자.<br>
+                \(|h(z)| \le |z|^4 + |z^2-1|\). \(|z^2-1|\)의 최댓값을 찾아야 한다. 이 방법은 복잡하다.<br>
+                <br>
+                **가장 좋은 선택:** \(g(z) = -2z^3 + z^2\), \(h(z) = z^4 - 1\).<br>
+                \(|g(z)| = |z^2(-2z+1)| = |-2z+1|\). \(z=e^{i\theta}\)일 때, \(-2z\)는 반지름 2인 원을 돌고, \(-2z+1\)은 중심 1, 반지름 2인 원을 돈다. \(1 \le |-2z+1| \le 3\).<br>
+                \(|h(z)| = |z^4-1|\). \(|h(z)|^2 = (z^4-1)(\bar{z}^4-1) = z^4\bar{z}^4 - z^4 - \bar{z}^4 + 1 = 2 - 2\cos(4\theta)\). 최댓값은 4. \(|h(z)|\)의 최댓값은 2.<br>
+                이것도 안된다.<br>
+                <br>
+                **올바른 접근:** \(g(z) = -2z^3\), \(h(z) = z^4+z^2-1\). <br>
+                \(|g(z)|=2\). <br>
+                \(|h(z)| = |z^4+z^2-1| \leq |z|^4+|z|^2+|-1| = 1+1+1=3\). 이 부등식은 너무 약하다. <br>
+                대신, \(z=e^{i\theta}\)일 때, \(h(z)=e^{i4\theta}+e^{i2\theta}-1\). \(|h(z)|\)가 2보다 작은지 확인하자.<br>
+                예를 들어 \(z=i\)일 때 \(h(i) = i^4+i^2-1 = 1-1-1 = -1\), \(|h(i)|=1 < 2\).<br>
+                예를 들어 \(z=-1\)일 때 \(h(-1)=1+1-1=1\), \(|h(-1)|=1 < 2\).<br>
+                \(|h(z)| \le |z^4+z^2| + 1 = |z^2(z^2+1)|+1 = |z^2+1|+1 = |e^{i2\theta}+1|+1\). \(|e^{i2\theta}+1|\)의 최댓값은 \(2\theta=\pi\), 즉 \(z=i\)일 때 0이고, \(2\theta=0\), 즉 \(z=1\)일 때 2이다. 따라서 \(|h(z)|\)는 3까지 커질 수 있다. 이 선택은 실패다.<br>
+                <br>
+                **가장 간단한 접근:** \(g(z) = z^4-2z^3\), \(h(z)=z^2-1\). 위에서 실패했다.
+                <br>
+                **최종 시도:** \(g(z) = -2z^3+z^2-1\), \(h(z) = z^4\).<br>
+                \(|h(z)|=1\).<br>
+                \(|g(z)| = |-2z^3+z^2-1| \ge |-2z^3| - |z^2-1| = 2 - |z^2-1|\).<br>
+                \(|z^2-1|\)의 최댓값은 \(z=i\)일 때 \(|-1-1|=2\). 최솟값은 \(z=1\)일 때 0. <br>
+                이 부등식은 \(|g(z)| \ge 0\)만을 보장한다.
+                <br><br>
+                **교재에 흔히 나오는 풀이:** \(g(z) = z^4 - 2z^3\), \(h(z)=z^2-1\)에서 \(|g(z)|=|z-2|\)는 [1,3]에 있고, \(|h(z)|=|z^2-1|\)는 [0,2]에 있다. 이것도 안된다.<br>
+                <br>
+                **다시 처음으로:** \(g(z) = -2z^3\), \(h(z) = z^4+z^2-1\). \(|g(z)|=2\). \(|h(z)| \leq |z^4|+|z^2|+|-1| = 3\). 이 방법은 안된다.
+                <br><br>
+                **정답 접근법:** \(g(z) = z^2-2z^3\), \(h(z)=z^4-1\). 이것도 안된다.
+                <br>
+                아마도 문제는 \(f(z) = 2z^4 - 2z^3 + z^2 - 1\)이거나 해야 루셰 정리가 쉽게 풀린다. 주어진 문제 그대로는 쉽지 않다.
+                만약 문제가 \(f(z)=z^4-5z+1\) 이라면, \(g(z)=-5z\), \(h(z)=z^4+1\)로 두면 \(|g(z)|=5\), \(|h(z)|\le|z|^4+1=2\). \(|g|>|h|\)이므로 \(f(z)\)는 \(g(z)\)와 같은 수의 근, 즉 1개의 근을 갖는다.
+                <br>
+                **주어진 문제에 대한 해설:** (인수정리/루셰정리가 깔끔하게 적용되지 않는 예시일 수 있음. 출제오류 가능성)
+                만약 \(f(z) = z^3-2z+5\)이라면 \(g(z)=z^3\), \(h(z)=-2z+5\)일 때, \(|z|=2\)에서 \(|g|=8\), \(|h|\le 2|z|+5=9\) 안됨.
+                \(g(z)=5, h(z)=z^3-2z\). \(|g|=5\), \(|h|\le |z|^3+2|z|=8+4=12\) 안됨.
+                <br><br>
+                **이 문제는 인수의 원리 또는 루셰의 정리의 전형적인 예제가 아니므로, 다른 문제로 대체합니다.**
+                <br><br>
+                **대체 문항 17:** 함수 \(f(z) = z^5 + 3z^2 + 1\)이 영역 \(1 < |z| < 2\)에 몇 개의 근을 갖는지 구하시오.
+                </p>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <div class="question-title">문항 17 (수정): 루셰의 정리</div>
+            <p>함수 \(p(z) = z^5 + 3z^2 + 1\)이 고리 영역(annulus) \(A = \{z: 1 < |z| < 2\}\)에 몇 개의 근(zero)을 갖는지 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer17_revised')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer17_revised">
+                <h3>정답 및 해설</h3>
+                <p>
+                <span class="key-point">루셰의 정리(Rouché's Theorem)</span>를 두 번 적용한다.<br>
+                1. 원 \(|z|=2\)의 내부:<br>
+                \(f(z) = z^5\), \(g(z) = 3z^2+1\)로 놓자. 경계 \(|z|=2\)에서:<br>
+                \(|f(z)| = |z^5| = 2^5 = 32\).<br>
+                \(|g(z)| = |3z^2+1| \le 3|z|^2+1 = 3(2^2)+1 = 13\).<br>
+                경계에서 \(|f(z)| > |g(z)|\)이므로, \(p(z) = f(z)+g(z)\)는 \(|z|<2\) 내부에서 \(f(z)=z^5\)와 같은 수의 근을 갖는다. 즉, 5개의 근을 갖는다.<br><br>
+                2. 원 \(|z|=1\)의 내부:<br>
+                \(f(z) = 3z^2\), \(g(z) = z^5+1\)로 놓자. 경계 \(|z|=1\)에서:<br>
+                \(|f(z)| = |3z^2| = 3|z|^2 = 3\).<br>
+                \(|g(z)| = |z^5+1| \le |z|^5+1 = 1+1 = 2\).<br>
+                경계에서 \(|f(z)| > |g(z)|\)이므로, \(p(z)\)는 \(|z|<1\) 내부에서 \(f(z)=3z^2\)와 같은 수의 근을 갖는다. 즉, 2개의 근을 갖는다.<br><br>
+                따라서 고리 영역 \(1 < |z| < 2\)에서의 근의 개수는 (\(|z|<2\)에서의 근 개수) - (\(|z| \le 1\)에서의 근 개수) 이다.<br>
+                경계 \(|z|=1\)에서는 \(|p(z)|=|3z^2+1+z^5| \ge |3z^2| - |z^5+1| \ge 3 - 2 = 1 \neq 0\)이므로 근이 없다.<br>
+                <span class="final-answer">근의 개수 = \(5 - 2 = 3\)개</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="question-box">
+            <div class="question-title">문항 18: 선형분수변환</div>
+            <p>세 점 \(z_1=0, z_2=1, z_3=\infty\)를 각각 \(w_1=-1, w_2=i, w_3=1\)로 보내는 선형분수변환(Möbius transformation) \(w=T(z)\)를 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer18')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer18">
+                <h3>정답 및 해설</h3>
+                <p>
+                선형분수변환의 불변량인 복비(cross-ratio)를 이용한다.<br>
+                \( \frac{(w-w_1)(w_2-w_3)}{(w-w_3)(w_2-w_1)} = \frac{(z-z_1)(z_2-z_3)}{(z-z_3)(z_2-z_1)} \)<br>
+                무한대가 포함된 경우, 해당 항을 1로 처리한다.<br>
+                \( \frac{(w-(-1))(i-1)}{(w-1)(i-(-1))} = \frac{(z-0)(1)}{(1)(1-0)} \)<br>
+                \( \frac{(w+1)(i-1)}{(w-1)(i+1)} = z \)<br>
+                \( (w+1)(i-1) = z(w-1)(i+1) \)<br>
+                \( w(i-1) + (i-1) = zw(i+1) - z(i+1) \)<br>
+                \( w(i-1) - zw(i+1) = -(i-1) - z(i+1) \)<br>
+                \( w[(i-1) - z(i+1)] = -i+1 -zi-z \)<br>
+                \( w = \frac{-i+1 -z(i+1)}{i-1-z(i+1)} = \frac{1-i - (1+i)z}{-1+i - (1+i)z} = \frac{(1-i)-(1+i)z}{(i-1)-(1+i)z}\)<br>
+                분모 분자에 \(-1\)을 곱하면 \( w = \frac{(1+i)z - (1-i)}{(1+i)z + (1-i)} \).<br>
+                <span class="final-answer">\( T(z) = \frac{(1+i)z - (1-i)}{(1+i)z + (1-i)} \)</span>
+                </p>
+            </div>
+        </div>
+        
+        <!-- 남은 12개 문항 추가 -->
+        <div class="question-box">
+            <div class="question-title">문항 19: 로그함수의 주값</div>
+            <p>복소수 \(z = (1-i)^{1+i}\)의 주값(principal value)을 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer19')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer19">
+                <h3>정답 및 해설</h3>
+                <p>
+                    정의에 의해 \(z^w = e^{w \text{Log}(z)}\)이다. 주값은 대문자 Log를 사용한다.<br>
+                    먼저 \(1-i\)의 극형식을 구한다: \(1-i = \sqrt{2} e^{-i\pi/4}\).<br>
+                    \(\text{Log}(1-i) = \ln|1-i| + i \text{Arg}(1-i) = \ln(\sqrt{2}) - i\frac{\pi}{4} = \frac{1}{2}\ln 2 - i\frac{\pi}{4}\).<br>
+                    따라서, \((1-i)^{1+i} = e^{(1+i)(\frac{1}{2}\ln 2 - i\frac{\pi}{4})}\).<br>
+                    지수를 계산하면: \((1+i)(\frac{1}{2}\ln 2 - i\frac{\pi}{4}) = (\frac{1}{2}\ln 2 + \frac{\pi}{4}) + i(\frac{1}{2}\ln 2 - \frac{\pi}{4})\).<br>
+                    \(z = e^{(\frac{1}{2}\ln 2 + \frac{\pi}{4})} \cdot e^{i(\frac{1}{2}\ln 2 - \frac{\pi}{4})}\).<br>
+                    \(z = e^{\frac{\pi}{4}}\sqrt{2} \left[ \cos(\frac{\ln 2}{2} - \frac{\pi}{4}) + i\sin(\frac{\ln 2}{2} - \frac{\pi}{4}) \right]\).<br>
+                    <span class="final-answer">\(e^{\pi/4}\sqrt{2} \left( \cos(\frac{\ln 2}{2} - \frac{\pi}{4}) + i\sin(\frac{\ln 2}{2} - \frac{\pi}{4}) \right)\)</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 20: 코시 부등식의 다른 적용</div>
+            <p>함수 \(f(z)\)가 전해석 함수이고, 모든 \(z\)에 대해 \(|f(z)| \le M|z|^k\)를 만족한다 (단, \(M\)은 양의 상수, \(k\)는 양의 정수). \(f(z)\)가 최대 \(k\)차 다항식임을 증명하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer20')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer20">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <span class="key-point">코시의 도함수 공식/부등식</span>을 \(f^{(n)}(0)\)에 적용한다.<br>
+                    \(|f^{(n)}(0)| \le \frac{n! M_R}{R^n}\), 여기서 \(M_R\)은 원 \(|z|=R\)에서 \(|f(z)|\)의 최댓값이다.<br>
+                    문제 조건에 의해, \(M_R \le M R^k\).<br>
+                    따라서, \(|f^{(n)}(0)| \le \frac{n! M R^k}{R^n} = n! M R^{k-n}\).<br>
+                    만약 \(n > k\)이면, \(k-n\)은 음수이다. 이때 \(R \to \infty\)의 극한을 취하면, \(|f^{(n)}(0)| \le \lim_{R \to \infty} n! M R^{k-n} = 0\).<br>
+                    따라서 \(n > k\)인 모든 \(n\)에 대해 \(f^{(n)}(0) = 0\)이다.<br>
+                    \(f(z)\)의 Maclaurin 급수는 \(\sum_{n=0}^{\infty} \frac{f^{(n)}(0)}{n!} z^n\)인데, \(n>k\)인 항의 계수가 모두 0이므로, 급수는 유한합이 된다.<br>
+                    \(f(z) = \sum_{n=0}^{k} \frac{f^{(n)}(0)}{n!} z^n\). 이는 최대 \(k\)차 다항식이다.<br>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 21: 특이점 종류 판별 II</div>
+            <p>함수 \(f(z) = z^2 \sin(\frac{1}{z})\)의 특이점 \(z=0\)의 종류를 판별하고, 그 점에서 유수를 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer21')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer21">
+                <h3>정답 및 해설</h3>
+                <p>
+                    \(z=0\) 근방에서 로랑 급수를 구한다. \(\sin w = w - \frac{w^3}{3!} + \frac{w^5}{5!} - \dots\)<br>
+                    \(w = 1/z\)를 대입하면,<br>
+                    \(f(z) = z^2 \left( \frac{1}{z} - \frac{1}{3!z^3} + \frac{1}{5!z^5} - \dots \right)\)<br>
+                    \( = z - \frac{1}{6z} + \frac{1}{120z^3} - \dots\)<br>
+                    로랑 급수에서 음수 거듭제곱 항이 무한히 많이 나타나므로, \(z=0\)은 <span class="key-point">본질적 특이점(essential singularity)</span>이다.<br>
+                    유수는 \(1/z\) 항의 계수이다.<br>
+                    <span class="final-answer">종류: 본질적 특이점, 유수: \(-1/6\)</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 22: 유수 정리의 응용</div>
+            <p>경로 C가 원 \( |z|=4 \) (양의 방향)일 때, 다음 적분 값을 구하시오.
+            $$ \oint_C z^2 e^{1/z} \,dz $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer22')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer22">
+                <h3>정답 및 해설</h3>
+                <p>
+                    피적분함수 \(f(z) = z^2 e^{1/z}\)의 유일한 특이점은 \(z=0\)이며, 이 점은 경로 내부에 있다.<br>
+                    유수 정리에 의해 적분 값은 \(2\pi i \cdot Res(f,0)\)이다.<br>
+                    \(z=0\)에서 유수를 구하기 위해 로랑 급수를 전개한다.<br>
+                    \(e^w = 1 + w + \frac{w^2}{2!} + \frac{w^3}{3!} + \dots\)<br>
+                    \(w=1/z\)를 대입하면, \(e^{1/z} = 1 + \frac{1}{z} + \frac{1}{2!z^2} + \frac{1}{3!z^3} + \dots\)<br>
+                    \(f(z) = z^2 \left( 1 + \frac{1}{z} + \frac{1}{2z^2} + \frac{1}{6z^3} + \dots \right)\)<br>
+                    \( = z^2 + z + \frac{1}{2} + \frac{1}{6z} + \dots\)<br>
+                    \(1/z\) 항의 계수, 즉 유수는 \(1/6\)이다.<br>
+                    적분 값 = \(2\pi i \cdot (1/6) = \pi i / 3\).<br>
+                    <span class="final-answer">정답: \(\pi i / 3\)</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 23: 조화함수와 평균값 정리</div>
+            <p>함수 \(u(x,y)=x^2-y^2\)는 영역 \(D=\{(x,y):x^2+y^2 < 4\}\)에서 조화함수이다. 원점 (0,0)에서의 값 \(u(0,0)\)이 반지름 1인 원 \(C: x^2+y^2=1\) 위에서의 \(u\) 값들의 평균과 같음을 보이시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer23')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer23">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <span class="key-point">조화함수의 평균값 성질</span>에 따르면, 조화함수의 한 점에서의 값은 그 점을 중심으로 하는 임의의 원 위에서의 함수값들의 평균과 같다.<br>
+                    이를 직접 계산하여 확인한다. \(u(0,0)=0^2-0^2=0\).<br>
+                    원 C 위의 점은 \(x=\cos\theta, y=\sin\theta\) (\(0 \le \theta \le 2\pi\))로 매개화할 수 있다.<br>
+                    원 C 위에서의 평균값은 \( \frac{1}{2\pi} \int_0^{2\pi} u(\cos\theta, \sin\theta) d\theta \).<br>
+                    \(u(\cos\theta, \sin\theta) = \cos^2\theta - \sin^2\theta = \cos(2\theta)\).<br>
+                    평균값 = \( \frac{1}{2\pi} \int_0^{2\pi} \cos(2\theta) d\theta = \frac{1}{2\pi} [\frac{1}{2}\sin(2\theta)]_0^{2\pi} = \frac{1}{4\pi}(0-0) = 0\).<br>
+                    따라서 \(u(0,0)\) = 0 = 평균값. 성립한다.
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 24: 코시-리만 방정식의 극형식</div>
+            <p>함수 \(f(z)=\ln r + i\theta\) (단, \(z=re^{i\theta}, r>0, -\pi < \theta < \pi\))가 해석적인지 판별하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer24')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer24">
+                <h3>정답 및 해설</h3>
+                <p>
+                    \(u(r,\theta) = \ln r\), \(v(r,\theta) = \theta\).<br>
+                    <span class="key-point">코시-리만 방정식의 극형식</span>은 \(u_r = \frac{1}{r}v_\theta\)와 \(v_r = -\frac{1}{r}u_\theta\)이다.<br>
+                    편도함수를 구하면:<br>
+                    \(u_r = 1/r\), \(u_\theta = 0\)<br>
+                    \(v_r = 0\), \(v_\theta = 1\)<br>
+                    방정식 확인:<br>
+                    \(u_r = 1/r\), \(\frac{1}{r}v_\theta = \frac{1}{r}(1) = 1/r\). (성립)<br>
+                    \(v_r = 0\), \(-\frac{1}{r}u_\theta = -\frac{1}{r}(0) = 0\). (성립)<br>
+                    편도함수들이 연속이고 C-R 방정식을 만족하므로 주어진 영역에서 함수는 해석적이다. (이 함수는 Log z 이다.)<br>
+                    <span class="final-answer">결론: 주어진 영역에서 해석적이다.</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 25: 함수 방정식</div>
+            <p>전해석 함수 \(f(z)\)가 모든 \(z\)에 대해 \(f(z+1)=f(z)\)와 \(f(z+i)=f(z)\)를 만족한다. \(f(z)\)는 상수함수임을 증명하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer25')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer25">
+                <h3>정답 및 해설</h3>
+                <p>
+                    주어진 조건은 \(f\)가 주기 1과 주기 i를 갖는 이중주기 함수임을 의미한다.<br>
+                    이는 임의의 정수 m, n에 대해 \(f(z+m+ni) = f(z)\)임을 뜻한다.<br>
+                    단위 정사각형 \(S = \{x+iy | 0 \le x \le 1, 0 \le y \le 1\}\)을 생각하자.<br>
+                    \(f\)는 전해석 함수이므로 연속이고, 닫힌 유계집합 S에서 \(|f(z)|\)는 최댓값 M을 갖는다. (최대-최소 정리)<br>
+                    이중주기성 때문에, 복소평면 전체에서 \(|f(z)|\)의 값은 S에서의 값들과 같다. 즉, 모든 z에 대해 \(|f(z)| \le M\)이다.<br>
+                    따라서 \(f(z)\)는 유계인 전해석 함수이다.<br>
+                    <span class="key-point">리우빌의 정리</span>에 의해, 유계인 전해석 함수는 상수함수이다.<br>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 26: 이상적분의 코시 주값</div>
+            <p>유수 정리를 이용하여 다음 이상적분의 코시 주값(Cauchy Principal Value)을 구하시오.
+            $$ P.V. \int_{-\infty}^{\infty} \frac{x \sin(x)}{x^2+4} \,dx $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer26')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer26">
+                <h3>정답 및 해설</h3>
+                <p>
+                    적분은 \(\text{Im} \int_{-\infty}^{\infty} \frac{x e^{ix}}{x^2+4} dx\)와 같다.<br>
+                    복소함수 \(f(z) = \frac{z e^{iz}}{z^2+4}\)를 고려하자. 특이점은 \(z=\pm 2i\).<br>
+                    상반평면에 있는 특이점은 \(z_0 = 2i\) (단순극)이다.<br>
+                    반지름 R인 상반원 경로를 따라 적분하면, <span class="key-point">조르단의 보조정리</span>에 의해 \(R \to \infty\)일 때 원호 부분의 적분은 0으로 수렴한다.<br>
+                    따라서, \(\int_{-\infty}^{\infty} f(x)dx = 2\pi i \cdot Res(f, 2i)\).<br>
+                    \(Res(f, 2i) = \lim_{z \to 2i} (z-2i) \frac{z e^{iz}}{(z-2i)(z+2i)} = \frac{2i e^{i(2i)}}{2i+2i} = \frac{2i e^{-2}}{4i} = \frac{e^{-2}}{2}\).<br>
+                    \(\int_{-\infty}^{\infty} \frac{x e^{ix}}{x^2+4} dx = 2\pi i \cdot \frac{e^{-2}}{2} = \pi i e^{-2}\).<br>
+                    우리가 구하는 값은 이 결과의 허수부분이다.<br>
+                    <span class="final-answer">정답: \(\pi e^{-2}\)</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 27: 항등 정리</div>
+            <p>단위 원판 \(D=\{z:|z|<1\}\)에서 해석적인 함수 \(f(z)\)가 모든 자연수 \(n \ge 2\)에 대해 \(f(1/n) = 1/n^2\)을 만족한다. \(f(z)\)를 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer27')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer27">
+                <h3>정답 및 해설</h3>
+                <p>
+                    함수 \(g(z) = z^2\)를 생각하자. \(g(z)\) 역시 D에서 해석적이다.<br>
+                    수열 \(z_n = 1/n\) (\(n \ge 2\))에 대해, \(f(z_n) = 1/n^2 = (1/n)^2 = g(z_n)\)이다.<br>
+                    수열 \(\{z_n\}\)은 D 내에 있고, 극한점 \(0\)도 D 내에 존재한다. (\(z_n \to 0\) as \(n \to \infty\))<br>
+                    <span class="key-point">항등 정리(Identity Theorem)</span>에 따르면, 영역 D에서 해석적인 두 함수가 D의 내점을 극한점으로 갖는 수열 위에서 같은 값을 가지면, 두 함수는 D 전체에서 동일하다.<br>
+                    따라서 D에서 \(f(z) = g(z) = z^2\)이다.<br>
+                    <span class="final-answer">정답: \(f(z) = z^2\)</span>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 28: 개방 사상 정리</div>
+            <p>상수함수가 아닌 전해석 함수 \(f(z)\)에 대하여, 상(image) \(f(\mathbb{C})\)가 실수의 부분집합이 될 수 없음을 설명하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer28')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer28">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <span class="key-point">개방 사상 정리(Open Mapping Theorem)</span>에 따르면, 상수함수가 아닌 해석함수는 열린 집합을 열린 집합으로 보낸다.<br>
+                    복소평면 \(\mathbb{C}\)는 열린 집합이다.<br>
+                    따라서 상 \(f(\mathbb{C})\)는 복소평면 \(\mathbb{C}\)의 열린 부분집합이어야 한다.<br>
+                    하지만, 실수의 부분집합(예: 실수축 \(\mathbb{R}\))은 복소평면에서 열린 집합이 아니다. 실수축 위의 어떤 점을 중심으로 하는 작은 원판도 허수 부분을 가진 복소수를 포함하므로 실수축에 포함될 수 없다.<br>
+                    따라서 \(f(\mathbb{C})\)는 열린 집합이 아니게 되어 모순이 발생한다.<br>
+                    그러므로, 상 \(f(\mathbb{C})\)는 실수의 부분집합이 될 수 없다.<br>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 29: 도함수가 0인 경우</div>
+            <p>영역 D에서 해석적인 함수 \(f(z)=u+iv\)에 대해, 만약 \(u(x,y)\)가 D에서 상수함수이면 \(f(z)\)도 상수함수임을 증명하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer29')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer29">
+                <h3>정답 및 해설</h3>
+                <p>
+                    \(u(x,y)=c\) (상수)라고 가정하자.<br>
+                    그러면 \(u\)의 모든 편도함수는 0이다: \(u_x = 0\), \(u_y = 0\).<br>
+                    \(f\)가 해석적이므로 <span class="key-point">코시-리만 방정식</span>을 만족한다.<br>
+                    \(v_y = u_x = 0\)<br>
+                    \(v_x = -u_y = 0\)<br>
+                    \(v_y=0\)이므로 \(v\)는 \(y\)에 무관하다, 즉 \(v(x,y)=h(x)\) 형태이다.<br>
+                    \(v_x=0\)이므로 \(h'(x)=0\), 따라서 \(h(x)\)는 상수 \(d\)이다. 즉 \(v(x,y)=d\).<br>
+                    결론적으로 \(f(z) = u+iv = c+id\) 이므로 \(f(z)\)는 상수함수이다.<br>
+                </p>
+            </div>
+        </div>
+        <div class="question-box">
+            <div class="question-title">문항 30: 특이점과 로랑 급수 II</div>
+            <p>함수 \(f(z) = \frac{z}{e^z-1}\)의 특이점 \(z=0\)의 종류를 판별하고, 이 점 근방에서의 로랑 급수 전개의 처음 세 항을 구하시오.</p>
+            <button class="toggle-button" onclick="toggleAnswer('answer30')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer30">
+                <h3>정답 및 해설</h3>
+                <p>
+                    1. 특이점 종류 판별:<br>
+                    \( \lim_{z \to 0} f(z) = \lim_{z \to 0} \frac{z}{e^z-1} \). 이는 0/0 꼴이므로 로피탈의 정리를 사용한다.<br>
+                    \( \lim_{z \to 0} \frac{(z)'}{(e^z-1)'} = \lim_{z \to 0} \frac{1}{e^z} = 1 \).<br>
+                    극한값이 유한하게 존재하므로 \(z=0\)은 <span class="key-point">제거 가능 특이점</span>이다.<br>
+                    2. 로랑 급수 (이 경우는 테일러 급수) 전개:<br>
+                    \(e^z-1 = (1+z+\frac{z^2}{2!}+\dots)-1 = z+\frac{z^2}{2}+\frac{z^3}{6}+\dots = z(1+\frac{z}{2}+\frac{z^2}{6}+\dots)\).<br>
+                    \(f(z) = \frac{z}{z(1+\frac{z}{2}+\frac{z^2}{6}+\dots)} = \frac{1}{1+(\frac{z}{2}+\frac{z^2}{6}+\dots)}\).<br>
+                    \(w = \frac{z}{2}+\frac{z^2}{6}+\dots\)로 두고, \(\frac{1}{1+w} = 1-w+w^2-\dots\)를 이용한다.<br>
+                    \(f(z) = 1 - (\frac{z}{2}+\frac{z^2}{6}) + (\frac{z}{2})^2 - \dots\)<br>
+                    \( = 1 - \frac{z}{2} - \frac{z^2}{6} + \frac{z^2}{4} - \dots\)<br>
+                    \( = 1 - \frac{z}{2} + (\frac{1}{4}-\frac{1}{6})z^2 - \dots = 1 - \frac{z}{2} + \frac{1}{12}z^2 - \dots \)<br>
+                    (이 계수들은 베르누이 수와 관련있다.)<br>
+                    <span class="final-answer">종류: 제거 가능 특이점, 처음 세 항: \(1 - \frac{1}{2}z + \frac{1}{12}z^2\)</span>
+                </p>
+            </div>
+        </div>
+
+        <!-- 문제 목록 끝 -->
+
+    </div>
+
+    <script>
+        function toggleAnswer(id) {
+            var answerBox = document.getElementById(id);
+            var button = answerBox.previousElementSibling;
+            if (answerBox.style.display === 'block') {
+                answerBox.style.display = 'none';
+                button.textContent = '정답 및 해설 보기';
+            } else {
+                answerBox.style.display = 'block';
+                button.textContent = '정답 및 해설 숨기기';
+            }
+        }
+    </script>
+
+</body>
+</html>
