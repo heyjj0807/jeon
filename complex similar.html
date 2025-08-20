@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025학년도 중등 수학 임용고사 - 복소해석학 유사 문제</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            font-family: 'Malgun Gothic', '맑은 고딕', sans-serif;
+            line-height: 1.8;
+            margin: 20px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        .container {
+            max-width: 850px;
+            margin: auto;
+            background: #ffffff;
+            padding: 25px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1, h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 15px;
+        }
+        .question-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 25px;
+            background: #fafafa;
+            border-radius: 8px;
+            transition: box-shadow 0.3s;
+        }
+        .question-box:hover {
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question-title {
+            font-weight: bold;
+            font-size: 1.3em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        .answer-box {
+            display: none;
+            border: 1px solid #a2d9ce;
+            padding: 20px;
+            margin-top: 20px;
+            background: #f0fdfa;
+            border-radius: 8px;
+        }
+        .answer-box h3 {
+            color: #16a085;
+            margin-top: 0;
+        }
+        .toggle-button {
+            cursor: pointer;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .toggle-button:hover {
+            background-color: #2980b9;
+        }
+        .key-point {
+            font-weight: bold;
+            color: #c0392b;
+            background-color: #fdedec;
+            padding: 3px 6px;
+            border-radius: 4px;
+        }
+        .final-answer {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>2025학년도 중등 수학 임용고사 대비</h1>
+        <h2>복소해석학 기출 기반 유사 문제 연습</h2>
+        <p>
+            본 자료는 과거 중등 수학 임용고사 '복소해석학' 파트의 출제 경향을 분석하여 만든 유사 문항입니다.
+            핵심적인 개념과 정리를 정확히 이해하고 적용하는 능력을 평가하는 데 중점을 두었습니다.
+            각 문항의 해설을 통해 자신의 풀이와 비교하며 학습하시기 바랍니다.
+        </p>
+
+        <hr>
+
+        <!-- 문항 1: 코시-리만 방정식과 해석함수 -->
+        <div class="question-box">
+            <div class="question-title">문항 1: 코시-리만 방정식 (서술형)</div>
+            <p>
+                복소함수 \(f(z) = (x^3 - 3xy^2) + i(ax^2y + by^3)\) 가 모든 복소평면에서 해석적(entire)이 되도록 하는 실수 \(a, b\)의 값을 구하고, 그 과정에서 이용된 핵심적인 정리를 서술하시오. 또한, \(f'(1+i)\)의 값을 구하시오. (단, \(z = x+iy\))
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer1')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer1">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <strong>1. 실수 \(a, b\)의 값 구하기</strong>
+                </p>
+                <p>
+                    함수 \(f(z) = u(x, y) + iv(x, y)\)에서 실수부와 허수부는 다음과 같다.<br>
+                    \(u(x, y) = x^3 - 3xy^2\)<br>
+                    \(v(x, y) = ax^2y + by^3\)
+                </p>
+                <p>
+                    함수 \(f(z)\)가 모든 복소평면에서 해석적이려면, 모든 점에서 <span class="key-point">코시-리만 방정식(Cauchy-Riemann equations)</span>을 만족해야 한다.
+                    코시-리만 방정식은 \( \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \) 와 \( \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \) 이다.
+                </p>
+                <p>
+                    먼저 각 편도함수를 계산하면, <br>
+                    \( \frac{\partial u}{\partial x} = 3x^2 - 3y^2 \)<br>
+                    \( \frac{\partial u}{\partial y} = -6xy \)<br>
+                    \( \frac{\partial v}{\partial x} = 2axy \)<br>
+                    \( \frac{\partial v}{\partial y} = ax^2 + 3by^2 \)
+                </p>
+                <p>
+                    첫 번째 코시-리만 방정식 \( \frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \) 에 대입하면,<br>
+                    \( 3x^2 - 3y^2 = ax^2 + 3by^2 \)<br>
+                    이 등식이 모든 \(x, y\)에 대해 성립해야 하므로, 계수를 비교하면 \(a = 3\) 이고 \(3b = -3\), 즉 \(b = -1\) 이다.
+                </p>
+                <p>
+                    두 번째 코시-리만 방정식 \( \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \) 에 위에서 구한 \(a\)값을 대입하여 확인하면,<br>
+                    \( -6xy = -(2 \cdot 3 \cdot xy) = -6xy \)<br>
+                    이 등식은 모든 \(x, y\)에 대해 성립한다.
+                </p>
+                <p>
+                    따라서, 함수 \(f(z)\)가 해석적이 되기 위한 실수는 <span class="final-answer">\(a=3, b=-1\)</span> 이다.
+                </p>
+                <p>
+                    <strong>2. \(f'(1+i)\)의 값 구하기</strong>
+                </p>
+                <p>
+                    해석함수의 도함수는 \( f'(z) = \frac{\partial u}{\partial x} + i\frac{\partial v}{\partial x} \) 로 구할 수 있다.<br>
+                    \( f'(z) = (3x^2 - 3y^2) + i(6xy) \) (단, \(a=3\)을 대입)
+                </p>
+                <p>
+                    점 \(z = 1+i\)는 \(x=1, y=1\)에 해당하므로, 이 값을 대입하면,<br>
+                    \( f'(1+i) = (3(1)^2 - 3(1)^2) + i(6 \cdot 1 \cdot 1) = 0 + 6i \)
+                </p>
+                <p>
+                    따라서, <span class="final-answer">\( f'(1+i) = 6i \)</span> 이다.
+                </p>
+                 <p>
+                    <strong>주요 평가 내용:</strong> 코시-리만 방정식을 이해하고 적용하여 미지수를 결정하는 능력, 해석함수의 도함수를 구하는 능력
+                </p>
+            </div>
+        </div>
+
+        <!-- 문항 2: 코시의 적분 공식 -->
+        <div class="question-box">
+            <div class="question-title">문항 2: 코시의 적분 공식 (기입형)</div>
+            <p>
+                양의 방향으로 주어진 경로 C에 대한 다음 복소적분의 값을 구하시오.<br>
+                $$ \oint_C \frac{\sin(\pi z)}{z^2 - 2z} \,dz, \quad \text{단, } C: |z|=1 $$
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer2')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer2">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <strong>1. 특이점(Singularity) 분석</strong>
+                </p>
+                <p>
+                    피적분함수 \( g(z) = \frac{\sin(\pi z)}{z^2 - 2z} = \frac{\sin(\pi z)}{z(z-2)} \) 의 특이점은 \(z = 0\) 과 \(z = 2\) 이다.
+                </p>
+                <p>
+                    <strong>2. 경로 C 내부의 특이점 확인</strong>
+                </p>
+                <p>
+                    적분 경로 \(C\)는 중심이 원점이고 반지름이 1인 원 \(|z|=1\) 이다.<br>
+                    - 특이점 \(z=0\)에 대해: \(|0| = 0 < 1\). 따라서 \(z=0\)은 경로 C 내부에 존재한다.<br>
+                    - 특이점 \(z=2\)에 대해: \(|2| = 2 > 1\). 따라서 \(z=2\)는 경로 C 외부에 존재한다.
+                </p>
+                <p>
+                    <strong>3. 코시의 적분 공식 적용</strong>
+                </p>
+                <p>
+                    경로 C 내부에는 \(z=0\)이라는 특이점만 존재하므로, 피적분함수를 \( \frac{f(z)}{z-0} \) 형태로 변형한다.<br>
+                    여기서 \( f(z) = \frac{\sin(\pi z)}{z-2} \) 이다.<br>
+                    함수 \(f(z)\)는 경로 C와 그 내부에서 해석적이므로, <span class="key-point">코시의 적분 공식(Cauchy's Integral Formula)</span>을 적용할 수 있다.
+                </p>
+                <p>
+                    코시의 적분 공식: \( \oint_C \frac{f(z)}{z-z_0} dz = 2\pi i \cdot f(z_0) \)<br>
+                    주어진 문제에 적용하면, \(z_0 = 0\) 이므로,<br>
+                    $$ \oint_C \frac{\frac{\sin(\pi z)}{z-2}}{z} \,dz = 2\pi i \cdot f(0) $$
+                </p>
+                <p>
+                    <strong>4. 값 계산</strong>
+                </p>
+                <p>
+                    \( f(0) = \frac{\sin(\pi \cdot 0)}{0-2} = \frac{\sin(0)}{-2} = \frac{0}{-2} = 0 \)<br>
+                    따라서 적분 값은 다음과 같다.<br>
+                    \( 2\pi i \cdot 0 = 0 \)
+                </p>
+                <p>
+                    <strong>정답:</strong> <span class="final-answer">\( 0 \)</span>
+                </p>
+                 <p>
+                    <strong>주요 평가 내용:</strong> 특이점 파악 능력, 적분 경로 내 특이점 판별 능력, 코시의 적분 공식을 올바르게 변형하고 적용하는 능력
+                </p>
+            </div>
+        </div>
+
+        <!-- 문항 3: 리우빌 정리 -->
+        <div class="question-box">
+            <div class="question-title">문항 3: 리우빌 정리 (서술형)</div>
+            <p>
+                함수 \(f(z)\)는 모든 복소평면에서 해석적(entire)이고, 모든 복소수 \(z\)에 대하여 \(|f(z)| \le 5 + |z|^{1/2}\) 을 만족한다. 이때 \(f(z)\)는 상수함수임을 증명하시오.
+            </p>
+            <button class="toggle-button" onclick="toggleAnswer('answer3')">정답 및 해설 보기</button>
+            <div class="answer-box" id="answer3">
+                <h3>정답 및 해설</h3>
+                <p>
+                    <strong>1. 증명 전략</strong>
+                </p>
+                <p>
+                    함수 \(f(z)\)가 상수함수임을 보이기 위해, 임의의 점에서의 도함수 \(f'(z)\)가 0임을 보이는 전략을 사용한다. 이를 위해 전해석함수의 도함수 크기를 추정하는 <span class="key-point">코시의 부등식(Cauchy's Inequality)</span>을 이용한다.
+                </p>
+                <p>
+                    <strong>2. 코시의 부등식 적용</strong>
+                </p>
+                <p>
+                    코시의 도함수에 대한 적분 공식으로부터 유도되는 코시의 부등식은 다음과 같다.<br>
+                    \( |f^{(n)}(z_0)| \le \frac{n! M_R}{R^n} \)<br>
+                    여기서 \(f\)는 원 \(C_R: |z-z_0|=R\)과 그 내부에서 해석적이고, 원 위에서 \(|f(z)| \le M_R\)을 만족한다.
+                </p>
+                <p>
+                    우리는 \(f'(z_0)\)에 대해 알아보고자 하므로, \(n=1\)인 경우를 사용한다.<br>
+                    \( |f'(z_0)| \le \frac{M_R}{R} \)
+                </p>
+                <p>
+                    <strong>3. \(M_R\) 설정 및 부등식 전개</strong>
+                </p>
+                <p>
+                    임의의 점 \(z_0\)를 중심으로 하고 반지름이 \(R\)인 원 \(C_R: |z-z_0|=R\)을 생각하자.<br>
+                    이 원 위의 임의의 점 \(z\)에 대하여, 삼각부등식에 의해 \(|z| = |z-z_0+z_0| \le |z-z_0| + |z_0| = R + |z_0|\) 이다.
+                </p>
+                <p>
+                    문제의 조건 \(|f(z)| \le 5 + |z|^{1/2}\) 을 이용하면, 원 \(C_R\) 위에서 다음이 성립한다.<br>
+                    \( |f(z)| \le 5 + |z|^{1/2} \le 5 + (R + |z_0|)^{1/2} \)<br>
+                    따라서, \( M_R = 5 + (R + |z_0|)^{1/2} \) 로 설정할 수 있다.
+                </p>
+                <p>
+                    이를 코시의 부등식에 대입하면,<br>
+                    \( |f'(z_0)| \le \frac{5 + (R + |z_0|)^{1/2}}{R} \)
+                </p>
+                <p>
+                    <strong>4. 극한을 이용한 결론 도출</strong>
+                </p>
+                <p>
+                    위 부등식은 임의의 양수 \(R > 0\)에 대해 성립한다. 이제 \(R \to \infty\) 일 때의 극한을 생각해보자.<br>
+                    $$ \lim_{R \to \infty} \frac{5 + (R + |z_0|)^{1/2}}{R} = \lim_{R \to \infty} \left( \frac{5}{R} + \frac{\sqrt{R+|z_0|}}{R} \right) = 0 + 0 = 0 $$
+                    (분모의 차수(1)가 분자의 차수(1/2)보다 높으므로 극한값은 0이다.)
+                </p>
+                <p>
+                    따라서, \( |f'(z_0)| \le 0 \) 이다. 절댓값은 항상 0 이상이므로, \( |f'(z_0)| = 0 \) 이어야 한다.
+                    이는 \( f'(z_0) = 0 \) 임을 의미한다.
+                </p>
+                <p>
+                    \(z_0\)는 복소평면 위의 임의의 점이므로, 모든 \(z\)에 대해 \(f'(z) = 0\) 이다.<br>
+                    따라서 함수 \(f(z)\)는 상수함수이다. 이는 <span class="key-point">리우빌 정리(Liouville's Theorem)의 확장된 형태</span>에 해당한다.
+                </p>
+                 <p>
+                    <strong>주요 평가 내용:</strong> 코시의 부등식을 이해하고, 주어진 조건을 활용하여 도함수의 크기를 추정한 뒤 극한을 적용하여 상수함수임을 증명하는 능력
+                </p>
+         
